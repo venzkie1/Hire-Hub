@@ -45,6 +45,10 @@ h1 {
     color:  var(--whiteColor);
 }
 
+.navbar-logo span {
+    color: orange;
+}
+
 .navbar-menu {
     width: 400px;
     display: flex;
