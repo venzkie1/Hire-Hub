@@ -41,14 +41,18 @@
     <div class="search-wrapper">
         <div class="search-box">
             <div class="search-card">
-                <input type="text" class="search-input" placeholder="Job title or keywords">
-                <button class="search-button">Search</button>
+                <h3 id="title"></h3>
+                <input type="text" class="search-input" placeholder="Job title or keywords" id="job-title">
+                <button class="search-button" id="search-btn" onclick="search()">Search</button>
             </div>
         </div>
     </div>
 
     <!-- filter box Section -->
     <div class="filter-box">
+        <div id="result">
+
+        </div>
         <div class="filter-dropdown">
             <select name="job-level" id="job-level" class="filter-select">
                 <option value="">Job Level</option>
@@ -428,6 +432,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- API key -->
+    <script src="key.js"></script>
     <!-- custom js -->
     <script src="main.js"></script>
 </body>
