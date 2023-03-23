@@ -1,0 +1,10 @@
+Sign in/Sign Up 
+    -Modal?
+    -localStorage lang
+Design
+    -Bootstrap/CSS
+    -Hover nav-links
+Responsive
+    -Testimonial section (Tablet[768px]) not responsive
+Function
+    -Clicking the logo move the viewport instantly
