@@ -12,3 +12,5 @@ Navbar
     -Pages for each navlinks?
 Search
     -Card layout after searching
+Navbar responsiveness
+    -navbar responsiveness should be below 768px
