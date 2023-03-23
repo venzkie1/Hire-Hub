@@ -10,3 +10,5 @@ Function
     -Clicking the logo move the viewport instantly
 Navbar
     -Pages for each navlinks?
+Search
+    -Card layout after searching
