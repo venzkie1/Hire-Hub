@@ -542,7 +542,53 @@ footer {
     text-decoration: underline;
 }
 
+table{
+    width: 90%;
+    border: none;
+    margin: 5%;
+    padding: 1rem;
+    background-color: var(--greyColor);
+    
+}
+tbody{
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 1rem;
+    min-height: 100px;
+    align-items: center;
+    background-color: var(--whiteColor);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    cursor: pointer;
+}
+td{
+    padding: 1rem 1rem;
+    margin: 2% 2%;
+}
+
+
 /* breakpoints */
+/* table */
+
+
+@media (max-width: 767px) {
+    table {
+        width: 100%;
+    }
+    
+    td {
+        display: block;
+        text-align: right;
+    }
+    
+    td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+}
+
 /* mobile */
 @media screen and (max-width: 600px)
 {

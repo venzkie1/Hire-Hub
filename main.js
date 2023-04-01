@@ -250,31 +250,47 @@ function search(){
     let job = document.getElementById("job-title").value;
     console.log(job);
     const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '75f4c13246msh454d143971256acp14e37ajsn9af53cf1d0d3',
-		'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
-	}
-};
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '75f4c13246msh454d143971256acp14e37ajsn9af53cf1d0d3',
+            'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
+        }
+    };
 
-fetch(`https://jsearch.p.rapidapi.com/search?query=${job}&page=1&num_pages=1`, options)
+    fetch(`https://jsearch.p.rapidapi.com/search?query=${job}&page=1&num_pages=1`, options)
 
-	.then(response => response.json())
-	.then(response => {
-        console.log(response);
-        // result.innerHTML = `<h3 class="msg">${response.data[0].employer_name}</h3>`
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
 
-        // response.data.forEach(item => {
-        //     result.innerHTML = `<h3 class="msg">${item.employer_name}</h3>`
-        // })
+            const data = response.data.map(item => {
+                return `<tr>
+                    <td>${item.job_title}</td>
+                    <td>${item.employer_name}</td>
+                    <td>${item.job_employment_type}</td>
+                </tr>`
+            }).join('');
 
-        const data = response.data.map(item => {
-            return `<table>
-            <thead>
-            <tr>
-            <th>Full time:<li>${item.job_title}</th> ${item.employer_name} ${item.job_employment_type}</li>`
-        });
-        result.innerHTML = `<ul>${data}</ul>`
-    })
-	.catch(err => console.error(err));
+            result.innerHTML = `
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Employer Name</th>
+                            <th>Employment Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${data}
+                    </tbody>
+                </table>
+            </div>
+            `;
+        })
+        .catch(err => console.error(err));
 }
+
+
+
+
